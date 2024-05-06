@@ -1,0 +1,18 @@
+{
+    "artist": {
+        "name": "Khabane Lame",
+        "sound": "Melodic sound",
+        "type": "original",
+        "link": {
+            "spotify": "spotify",
+            "apple": "apple",
+            "tiktok": "tiktok"
+        },
+        "duration": "00:45",
+        "bitrate": "320",
+        "country": "Canada",
+        "place_country": "05",
+        "place_world": "43",
+        "keywords": ["Whispering breeze", "Wandering soul", "Crimson dawn", "Echoes of silence"]
+    }
+}
