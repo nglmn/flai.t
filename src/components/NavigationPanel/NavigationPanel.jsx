@@ -63,8 +63,8 @@ const Avatar = styled.div`
 `
 
 const NavigationPanel = () => {
-    const [isRingHover, setIsRingHover] = useState(false);
-    const [isSettHover, setIsSettHover] = useState(false);
+    const [isRingHover, setIsRingHover] = useState(null);
+    const [isSettHover, setIsSettHover] = useState(null);
     return (
         <Navigation>
             <BurgerBtn type="button">
@@ -75,13 +75,13 @@ const NavigationPanel = () => {
             <div>
                 <BtnsWrapper>
                     <NavBtn type="button"
-                        onMouseEnter={() => setIsRingHover(true)}
-                        onMouseLeave={() => setIsRingHover(false)}>
+                        onMouseEnter={() => setIsRingHover('true')}
+                        onMouseLeave={() => setIsRingHover(null)}>
                         <IconRing hovered={isRingHover} />
                     </NavBtn>
                     <NavBtn type="button"
-                        onMouseEnter={() => setIsSettHover(true)}
-                        onMouseLeave={() => setIsSettHover(false)}>
+                        onMouseEnter={() => setIsSettHover('true')}
+                        onMouseLeave={() => setIsSettHover(null)}>
                         <IconSettings hovered={isSettHover} />
                     </NavBtn>
                 </BtnsWrapper>

@@ -74,8 +74,8 @@ const IconDownload = styled(GoDownload)`
 `
 
 const Header = () => {
-    const [isReloadHover, setIsReloadHover] = useState(false);
-    const [isDownloadHover, setIsDownloadHover] = useState(false);
+    const [isReloadHover, setIsReloadHover] = useState(null);
+    const [isDownloadHover, setIsDownloadHover] = useState(null);
     return (
         <HeaderWrapper>
             <Logo>AI Prediction</Logo>
@@ -86,14 +86,14 @@ const Header = () => {
                 </div>
                 <BtnsContainer>
                     <HeaderBtn type="button"
-                        onMouseEnter={() => setIsReloadHover(true)}
-                        onMouseLeave={() => setIsReloadHover(false)} >
+                        onMouseEnter={() => setIsReloadHover("true")}
+                        onMouseLeave={() => setIsReloadHover(null)} >
                         <IconReload hovered={isReloadHover} />
                         Update
                     </HeaderBtn>
                     <HeaderBtn type="button"
-                        onMouseEnter={() => setIsDownloadHover(true)}
-                        onMouseLeave={() => setIsDownloadHover(false)} >
+                        onMouseEnter={() => setIsDownloadHover("true")}
+                        onMouseLeave={() => setIsDownloadHover(null)} >
                         <IconDownload hovered={isDownloadHover} />
                         Download
                     </HeaderBtn>

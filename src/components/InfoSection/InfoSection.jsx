@@ -6,7 +6,7 @@ import data from "../../data.json";
 import { getArtistData } from "../../api";
 
 import KeywordsComponent from "../KeywordsComponent/KeywordsComponent";
-import { useQuery } from "react-query";
+import { useQuery } from '@tanstack/react-query'
 
 const Section = styled.section`
     width: 100%;
@@ -307,7 +307,9 @@ const GrowthCube = styled.div`
 const InfoSection = () => {
 
     /*------------- fetch user data----------------- */
-    /* const { data, isLoading, isError } = useQuery('artistData', getArtistData);
+    const { data, isLoading, isError } = useQuery({ queryKey: ['artistData'], queryFn: () => getArtistData().then(data => data) })
+
+    console.log({ data, isLoading, isError });
     if (isLoading) {
         return <p>loading...</p>
     }
@@ -316,11 +318,12 @@ const InfoSection = () => {
     }
     if (!data) {
         return <p>no data</p>
-    } */
+    }
 
-    const { name, sound, type, link: { spotify, apple, tiktok }, duration, bitrate, country, place_country, place_world, keywords } = data.artist;
+    const { name, sound, type, link: { spotify, apple, tiktok }, duration, bitrate, country, place_country, place_world, keywords } = data;
 
-    console.log(keywords);
+
+
 
     return (
         <Section id="info">

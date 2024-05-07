@@ -14,5 +14,64 @@
         "place_country": "05",
         "place_world": "43",
         "keywords": ["Whispering breeze", "Wandering soul", "Crimson dawn", "Echoes of silence"]
+    },
+    "post_data": {
+        "posts": [
+            {
+                "name": "Mo",
+                "growth": 50000,
+                "predictionAI": 0
+            },
+            {
+                "name": "Tu",
+                "growth": 70000,
+                "predictionAI": 0
+            },
+            {
+                "name": "We",
+                "growth": 100000,
+                "predictionAI": 0
+            },
+            {
+                "name": "Th",
+                "growth": 120000,
+                "predictionAI": 30000
+            },
+            {
+                "name": "Fr",
+                "growth": 180000,
+                "predictionAI": 20000
+            },
+            {
+                "name": "Sa",
+                "growth": 30000,
+                "predictionAI": 220000
+            },
+            {
+                "name": "Su",
+                "growth": 60000,
+                "predictionAI": 240000
+            },
+            {
+                "name": "Mo",
+                "growth": 0,
+                "predictionAI": 320000
+            },
+            {
+                "name": "Tu",
+                "growth": 0,
+                "predictionAI": 380000
+            },
+            {
+                "name": "We",
+                "growth": 0,
+                "predictionAI": 0
+            },
+            {
+                "name": "Th",
+                "growth": 0,
+                "predictionAI": 0
+            }
+        ]
     }
 }

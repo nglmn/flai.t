@@ -3,10 +3,13 @@ import { BiSolidLike } from "react-icons/bi";
 import { MdLocationPin } from "react-icons/md";
 import { BsStars } from "react-icons/bs";
 
+import ChartsComponent from "../ChartsComponent/ChartsComponent";
+import DropdownComponent from "../DropdownComponent/DropdownComponent";
+
 const Section = styled.section`
     padding: 53px 40px 0px 40px;
 `
-const GrowthTitle = styled.p`
+const GrowthTitle = styled.div`
     color: rgb(209, 253, 10);
     font-size: 20px;
     font-weight: 700;
@@ -95,7 +98,7 @@ const GrowthSection = () => {
     return (
         <Section>
             <GrowthTitle>
-                <svg width="16" height="16">
+                <svg width="25" height="25">
                     <use href="../../../public/img/icons.svg#icon-growth"></use>
                 </svg>
                 <p>Growth</p>
@@ -114,6 +117,10 @@ const GrowthSection = () => {
                     <p>Geo Popularity</p>
                 </GrowthItem>
             </GrowthPanel>
+
+            <ChartsComponent />
+
+            <DropdownComponent />
         </Section>
     )
 }
