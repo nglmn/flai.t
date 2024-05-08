@@ -89,7 +89,7 @@ const AudienceSection = () => {
         <Section>
             <Title>
                 <svg width="25" height="25">
-                    <use href="../../../public/img/icons.svg#icon-audience"></use>
+                    <use href="/img/icons.svg#icon-audience"></use>
                 </svg>
                 <p>Sound Audience</p>
             </Title>
@@ -99,7 +99,7 @@ const AudienceSection = () => {
                         <ProgressInfo>
                             <ProgressTitle>
                                 <svg width="17" height="18">
-                                    <use href={`../../../public/img/icons.svg#icon-${name.toLowerCase()}`}></use>
+                                    <use href={`/img/icons.svg#icon-${name.toLowerCase()}`}></use>
                                 </svg>
                                 <p>{name}</p>
                             </ProgressTitle>

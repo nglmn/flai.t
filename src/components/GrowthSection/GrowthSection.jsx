@@ -99,7 +99,7 @@ const GrowthSection = () => {
         <Section>
             <GrowthTitle>
                 <svg width="25" height="25">
-                    <use href="../../../public/img/icons.svg#icon-growth"></use>
+                    <use href="/img/icons.svg#icon-growth"></use>
                 </svg>
                 <p>Growth</p>
             </GrowthTitle>

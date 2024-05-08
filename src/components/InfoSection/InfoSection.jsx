@@ -2,6 +2,10 @@ import styled from "styled-components";
 import { FaPlay } from "react-icons/fa";
 import { IoIosInformationCircleOutline, IoMdLock } from "react-icons/io";
 import flag from "../../../public/img/MainPanel/Canada.png";
+import cover from "../../../public/img/MainPanel/cover.png";
+import spotifyImg from "../../../public/img/MainPanel/spotify-1.png";
+import appleImg from "../../../public/img/MainPanel/apple_music.png";
+import tiktokImg from "../../../public/img/MainPanel/tik_tok.png";
 import { getArtistData } from "../../api";
 
 import KeywordsComponent from "../KeywordsComponent/KeywordsComponent";
@@ -326,7 +330,7 @@ const InfoSection = () => {
                             <PlayBtn type="button">
                                 <PlayIcon />
                             </PlayBtn>
-                            <img src="../../../public/img/MainPanel/cover.png" alt="cover" />
+                            <img src={cover} alt="cover" />
                         </Cover>
                         <InfoArtist>
                             <NameWrapper>
@@ -386,17 +390,17 @@ const InfoSection = () => {
                     <PlatformList>
                         <PlatformListItem>
                             <a href={spotify}>
-                                <img src="../../../public/img/MainPanel/spotify-1.png" alt="spotify" />
+                                <img src={spotifyImg} alt="spotify" />
                             </a>
                         </PlatformListItem>
                         <PlatformListItem>
                             <a href={apple}>
-                                <img src="../../../public/img/MainPanel/apple_music.png" alt="apple" />
+                                <img src={appleImg} alt="apple" />
                             </a>
                         </PlatformListItem>
                         <PlatformListItem>
                             <a href={tiktok}>
-                                <img src="../../../public/img/MainPanel/tik_tok.png" alt="tiktok" />
+                                <img src={tiktokImg} alt="tiktok" />
                             </a>
                         </PlatformListItem>
                     </PlatformList>

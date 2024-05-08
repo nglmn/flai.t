@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import styled from "styled-components";
 import { IoMdLock } from "react-icons/io";
@@ -313,7 +314,7 @@ const RecomendationSection = () => {
         <Section>
             <Title>
                 <svg width="25" height="25">
-                    <use href="../../../public/img/icons.svg#icon-recom"></use>
+                    <use href="/img/icons.svg#icon-recom"></use>
                 </svg>
                 <p><span>Recommendations</span> from AI</p>
             </Title>

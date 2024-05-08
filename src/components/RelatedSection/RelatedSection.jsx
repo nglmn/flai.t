@@ -61,7 +61,7 @@ const RelatedSection = () => {
         <Section>
             <Title>
                 <svg width="25" height="25">
-                    <use href="../../../public/img/icons.svg#icon-related"></use>
+                    <use href="/img/icons.svg#icon-related"></use>
                 </svg>
                 <p><span>Related</span> Sounds</p>
             </Title>
