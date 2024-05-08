@@ -68,7 +68,7 @@ const NavigationPanel = () => {
         <Navigation>
             <BurgerBtn type="button">
                 <svg>
-                    <use href="/public/img/icons.svg#burger"></use>
+                    <use href="/img/icons.svg#burger"></use>
                 </svg>
             </BurgerBtn>
             <div>
