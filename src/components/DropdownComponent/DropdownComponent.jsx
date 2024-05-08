@@ -100,9 +100,7 @@ const BoxComponent = styled.div`
         line-height: 20px;
         letter-spacing: 0%;
     }
-
 `
-
 
 const options = ['Last Week', 'Last Month', 'Last Year'];
 const labels = [{ color: '#c704fe', text: 'Growth' }, { color: '#D1FD0A', text: 'AI Prediction' }]
@@ -121,7 +119,12 @@ const DropdownComponent = () => {
                     </DropdownButton>
                     <DropdownContent isOpen={isOpen.toString()}>
                         {options.map((option, index) => (
-                            <DropdownItem key={index} onClick={(e) => { setSelect(e.target.textContent); toggleDropdown() }}>{option}</DropdownItem>
+                            <DropdownItem
+                                key={index}
+                                onClick={(e) => { setSelect(e.target.textContent); toggleDropdown() }}
+                            >
+                                {option}
+                            </DropdownItem>
                         ))}
                     </DropdownContent>
                 </Dropdown>

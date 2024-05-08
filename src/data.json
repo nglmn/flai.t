@@ -65,13 +65,45 @@
             {
                 "name": "We",
                 "growth": 0,
-                "predictionAI": 0
+                "predictionAI": 0,
+                "future": 500000
             },
             {
                 "name": "Th",
                 "growth": 0,
-                "predictionAI": 0
+                "predictionAI": 0,
+                "future": 500000
             }
         ]
-    }
+    },
+    "audience": [
+        {
+            "name": "Beauty",
+            "ratio": 40 
+        },
+        {
+            "name": "Music",
+            "ratio": 31 
+        },
+        {
+            "name": "Travel",
+            "ratio": 22 
+        },
+        {
+            "name": "Show",
+            "ratio": 14 
+        },
+        {
+            "name": "Sport",
+            "ratio": 12 
+        },
+        {
+            "name": "Health",
+            "ratio": 9
+        },
+        {
+            "name": "Other",
+            "ratio": 6 
+        }
+    ]
 }

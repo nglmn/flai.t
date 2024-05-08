@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import Header from "../Header/Header";
 import InfoSection from "../InfoSection/InfoSection";
 import GrowthSection from "../GrowthSection/GrowthSection";
@@ -5,18 +6,20 @@ import AudienceSection from "../AudienceSection/AudienceSection";
 import RelatedSection from "../RelatedSection/RelatedSection";
 import RecomendationSection from "../RecomendationSection/RecomendationSection";
 
-import css from "./MainPart.module.css";
-
+const MainContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`
 const MainPart = () => {
     return (
-        <div className={css.mainContainer}>
+        <MainContainer>
             <Header />
             <InfoSection />
             <GrowthSection />
             <AudienceSection />
             <RelatedSection />
             <RecomendationSection />
-        </div>
+        </MainContainer>
     )
 }
 

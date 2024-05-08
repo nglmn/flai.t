@@ -5,6 +5,7 @@
     line-height: 1.5;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.87);
+    fill: white;
     background-color: #000000;
 }
 
@@ -16,8 +17,4 @@ body {
 
 button{
     cursor: pointer;
-}
-
-.container{
-    width: 1400px;
 }

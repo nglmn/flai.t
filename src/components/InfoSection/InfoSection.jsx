@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { FaPlay } from "react-icons/fa";
 import { IoIosInformationCircleOutline, IoMdLock } from "react-icons/io";
 import flag from "../../../public/img/MainPanel/Canada.png";
-import data from "../../data.json";
 import { getArtistData } from "../../api";
 
 import KeywordsComponent from "../KeywordsComponent/KeywordsComponent";
@@ -69,7 +68,7 @@ const NameWrapper = styled.div`
     flex-direction: column;
     gap: 4px;
 `
-const InfoTitle = styled.p`
+const InfoTitle = styled.div`
     color: rgb(142, 143, 146);
     font-size: 12px;
     font-weight: 600;
@@ -238,7 +237,7 @@ const PlatformData = styled.div`
     margin-left: 100px;
     justify-content: space-between;
 `
-const Divider = styled.div`
+export const Divider = styled.div`
     left: 0;
     width: 100%;
     margin-top: 30px;
@@ -305,11 +304,7 @@ const GrowthCube = styled.div`
 
 
 const InfoSection = () => {
-
-    /*------------- fetch user data----------------- */
     const { data, isLoading, isError } = useQuery({ queryKey: ['artistData'], queryFn: () => getArtistData().then(data => data) })
-
-    console.log({ data, isLoading, isError });
     if (isLoading) {
         return <p>loading...</p>
     }
@@ -321,9 +316,6 @@ const InfoSection = () => {
     }
 
     const { name, sound, type, link: { spotify, apple, tiktok }, duration, bitrate, country, place_country, place_world, keywords } = data;
-
-
-
 
     return (
         <Section id="info">

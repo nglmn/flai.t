@@ -1,6 +1,8 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, LabelList, ResponsiveContainer } from 'recharts';
-import data from "../../data.json";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { useQuery } from '@tanstack/react-query';
+// import data from "../../data.json";
 import styled from 'styled-components';
+import { getPostsData } from '../../api';
 
 const GraphContainer = styled.div`
     margin-top: 24px;
@@ -28,9 +30,19 @@ const LabelSign = styled.p`
 `
 
 
-
 const ChartsComponent = () => {
-    const renderCustomBarLabelGreen = ({ x, y, width, value }) => {
+    const { data, isLoading, isError } = useQuery({ queryKey: ['posts'], queryFn: () => getPostsData().then(data => data) })
+    if (isLoading) {
+        return <p>loading...</p>
+    }
+    if (isError) {
+        return <p>Error</p>
+    }
+    if (!data) {
+        return <p>no data</p>
+    }
+
+    const renderCustomBarLabelPrediction = ({ x, y, width, value }) => {
         if (value === 0) return;
         if (value && value > 999) {
             return (
@@ -51,7 +63,7 @@ const ChartsComponent = () => {
 
         )
     };
-    const renderCustomBarLabelPink = ({ x, y, width, value }) => {
+    const renderCustomBarLabelGrowth = ({ x, y, width, value }) => {
         if (value === 0) return;
         if (value && value > 999) {
             return (
@@ -81,7 +93,7 @@ const ChartsComponent = () => {
                 <BarChart
                     width={874}
                     height={295}
-                    data={data.post_data.posts}
+                    data={data.posts}
                     margin={{
                         top: 50,
                         right: 4,
@@ -95,6 +107,9 @@ const ChartsComponent = () => {
                         dy={10}
                         dataKey="name"
                         tickSize={0}
+                        style={{
+                            color: "#ffffff", fontSize: "10px", fontWeight: 700, textTransform: 'uppercase'
+                        }}
                     />
                     <YAxis
                         dx={-10}
@@ -102,30 +117,49 @@ const ChartsComponent = () => {
                         ticks={[100000, 200000, 300000, 400000, 500000]}
                         tickSize={0}
                         tickLine={false}
-                        style={{ color: "#ffffff" }}
+                        style={{
+                            fill: "#ffffff", fontSize: "10px", fontWeight: 700
+                        }}
                         tickFormatter={(value) => {
                             if (value > 999) {
                                 return `${value / 1000}k`
                             }
                             return value;
                         }} />
-                    <Tooltip />
+                    <Tooltip
+                        cursor={{ fill: "#d0fd0a4d" }}
+                    />
                     <Legend iconType='none' />
+                    <defs>
+                        <linearGradient id="colorGradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="25%" stopColor="#d0fd0a20" stopOpacity={0.8} />
+                            <stop offset="75%" stopColor="#d0fd0a7e" stopOpacity={0.8} />
+                        </linearGradient>
+                    </defs>
 
                     <Bar
                         dataKey="growth"
                         stackId="a"
                         fill="#C704FE"
                         barSize={69}
-                        label={renderCustomBarLabelPink}
+                        label={renderCustomBarLabelGrowth}
+                        activeFill="#ca8282"
                     />
                     <Bar
                         dataKey="predictionAI"
                         stackId="a"
                         fill="#D1FD0A"
-                        label={renderCustomBarLabelGreen}
+                        label={renderCustomBarLabelPrediction}
                     />
-
+                    <Bar
+                        dataKey="future"
+                        stackId="a"
+                        fill="url(#colorGradient)"
+                        stroke="#D1FD0A"
+                        strokeWidth={1}
+                        strokeDasharray="5 5"
+                        barSize={69}
+                    />
                 </BarChart >
             </ResponsiveContainer >
         </GraphContainer>

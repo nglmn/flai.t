@@ -4,7 +4,7 @@ const PremiumPanel = styled.div`
     height: fit-content;
     width: 100%;
     background: rgb(209, 253, 10);
-    padding: 19px 20px 15px 20px;
+    padding: 19px 15px 15px 15px;
     & p{
         color: rgb(111, 136, 0);
         font-size: 12px;
