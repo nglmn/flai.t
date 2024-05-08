@@ -41,7 +41,7 @@ const ProgressTitle = styled.div`
 const ProgressContainer = styled.div`
     position: relative;
     overflow: hidden;
-    width: 425px;
+    width: 465px;
     height: 8px;
     background: rgb(33, 33, 34);
 `
@@ -55,7 +55,7 @@ const ProgressBar = styled.div`
     background: rgb(209, 253, 10);
 `
 const ProgressInfo = styled.div`
-    width: 425px;
+    width: 465px;
     display: flex;
     justify-content: space-between;
     & p{

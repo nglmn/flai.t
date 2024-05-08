@@ -9,6 +9,7 @@ import RecomendationSection from "../RecomendationSection/RecomendationSection";
 const MainContainer = styled.div`
     display: flex;
     flex-direction: column;
+    background-color: #0D0D0E;
 `
 const MainPart = () => {
     return (
